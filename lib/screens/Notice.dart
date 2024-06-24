@@ -122,8 +122,10 @@ class _NoticeeeState extends State<Noticeee> {
         buttonBackgroundColor: Colors.blueAccent,
         color: Colors.blueAccent,
         animationDuration: const Duration(milliseconds: 300),
+        index: 4,
         items: const [
           Icon(Icons.home, size: 26, color: Colors.white),
+          Icon(Icons.hotel, size: 26, color: Colors.white),
           Icon(Icons.warning, size: 26, color: Colors.white),
           Icon(Icons.menu, size: 26, color: Colors.white),
           Icon(Icons.notification_add, size: 26, color: Colors.white),
@@ -131,6 +133,7 @@ class _NoticeeeState extends State<Noticeee> {
         ],
         onTap: (index) {
           setState(() {
+            //_page = index;
             //  _page = index;
             // Update _page or navigate to a different screen based on index
             Navigator.pushReplacement(

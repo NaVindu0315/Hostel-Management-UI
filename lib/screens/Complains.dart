@@ -26,6 +26,7 @@ class Complainss extends StatefulWidget {
 }
 
 class _ComplainssState extends State<Complainss> {
+  int pageno = 3;
   List<Widget> _pages = [
     Dashboard(),
     Rooms(),
@@ -142,8 +143,10 @@ class _ComplainssState extends State<Complainss> {
         buttonBackgroundColor: Colors.blueAccent,
         color: Colors.blueAccent,
         animationDuration: const Duration(milliseconds: 300),
+        index: 2,
         items: const [
           Icon(Icons.home, size: 26, color: Colors.white),
+          Icon(Icons.hotel, size: 26, color: Colors.white),
           Icon(Icons.warning, size: 26, color: Colors.white),
           Icon(Icons.menu, size: 26, color: Colors.white),
           Icon(Icons.notification_add, size: 26, color: Colors.white),

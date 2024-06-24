@@ -1,7 +1,10 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:hostel/rooms.dart';
 import 'package:hostel/screens/Complains.dart';
+import 'package:hostel/screens/Directmsg.dart';
 import 'package:hostel/screens/Msg_Menu.dart';
+import 'package:hostel/screens/Notice.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -22,6 +25,16 @@ class Dash extends StatefulWidget {
 }
 
 class _DashState extends State<Dash> {
+  int _page = 0;
+  List<Widget> _pages = [
+    Dashboard(),
+    Rooms(),
+    Complains(),
+    Msg_Menu(),
+    Notice(),
+    Direct_Msg(),
+    // Add more pages here
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -191,6 +204,32 @@ class _DashState extends State<Dash> {
         ),
         Spacer(),
       ]),
+      bottomNavigationBar: CurvedNavigationBar(
+        backgroundColor: Colors.transparent,
+        buttonBackgroundColor: Colors.blueAccent,
+        color: Colors.blueAccent,
+        animationDuration: const Duration(milliseconds: 300),
+        index: 0,
+        items: const [
+          Icon(Icons.home, size: 26, color: Colors.white),
+          Icon(Icons.hotel, size: 26, color: Colors.white),
+          Icon(Icons.warning, size: 26, color: Colors.white),
+          Icon(Icons.menu, size: 26, color: Colors.white),
+          Icon(Icons.notification_add, size: 26, color: Colors.white),
+          Icon(Icons.message, size: 26, color: Colors.white),
+        ],
+        onTap: (index) {
+          setState(() {
+            _page = index;
+            //  _page = index;
+            // Update _page or navigate to a different screen based on index
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => _pages[index]),
+            );
+          });
+        },
+      ),
     );
   }
 }
