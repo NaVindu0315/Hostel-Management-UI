@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hostel/screens/Notice.dart';
 
+import 'Directmsg.dart';
+
 class Msg_Menu extends StatelessWidget {
   const Msg_Menu({Key? key}) : super(key: key);
 
@@ -85,7 +87,7 @@ class _MsgmenuuState extends State<Msgmenuu> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Msg_Menu()),
+                      MaterialPageRoute(builder: (context) => Direct_Msg()),
                     );
                     // button press action
                   },
