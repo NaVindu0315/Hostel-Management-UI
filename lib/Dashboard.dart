@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hostel/rooms.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -56,6 +57,10 @@ class _DashState extends State<Dash> {
                 ),
               ),
               onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Rooms()),
+                );
                 // button press action
               },
               child: Text(
