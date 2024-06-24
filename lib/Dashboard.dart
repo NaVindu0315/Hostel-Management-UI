@@ -1,5 +1,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:hostel/prev.dart';
 import 'package:hostel/rooms.dart';
 import 'package:hostel/screens/Complains.dart';
 import 'package:hostel/screens/Directmsg.dart';
@@ -196,6 +197,40 @@ class _DashState extends State<Dash> {
               },
               child: Text(
                 'Direct Msg',
+                style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
+              ),
+            ),
+            Spacer(),
+          ],
+        ),
+        SizedBox(
+          height: 20.0,
+        ),
+
+        ///direct msg
+        Row(
+          children: [
+            Spacer(),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.blue,
+                onPrimary: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10), // border radius
+                ),
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => Warden(
+                            username: 'test',
+                          )),
+                );
+                // button press action
+              },
+              child: Text(
+                'Warden',
                 style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
               ),
             ),
