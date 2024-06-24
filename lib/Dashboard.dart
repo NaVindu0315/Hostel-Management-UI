@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hostel/rooms.dart';
+import 'package:hostel/screens/Complains.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -88,6 +89,10 @@ class _DashState extends State<Dash> {
                 ),
               ),
               onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Complains()),
+                );
                 // button press action
               },
               child: Text(
