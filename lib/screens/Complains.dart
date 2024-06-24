@@ -1,4 +1,11 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:hostel/Dashboard.dart';
+import 'package:hostel/rooms.dart';
+import 'package:hostel/screens/Directmsg.dart';
+
+import 'Msg_Menu.dart';
+import 'Notice.dart';
 
 class Complains extends StatelessWidget {
   const Complains({Key? key}) : super(key: key);
@@ -19,6 +26,15 @@ class Complainss extends StatefulWidget {
 }
 
 class _ComplainssState extends State<Complainss> {
+  List<Widget> _pages = [
+    Dashboard(),
+    Rooms(),
+    Complains(),
+    Msg_Menu(),
+    Notice(),
+    Direct_Msg(),
+    // Add more pages here
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -120,6 +136,29 @@ class _ComplainssState extends State<Complainss> {
           ),
           Spacer(),
         ],
+      ),
+      bottomNavigationBar: CurvedNavigationBar(
+        backgroundColor: Colors.transparent,
+        buttonBackgroundColor: Colors.blueAccent,
+        color: Colors.blueAccent,
+        animationDuration: const Duration(milliseconds: 300),
+        items: const [
+          Icon(Icons.home, size: 26, color: Colors.white),
+          Icon(Icons.warning, size: 26, color: Colors.white),
+          Icon(Icons.menu, size: 26, color: Colors.white),
+          Icon(Icons.notification_add, size: 26, color: Colors.white),
+          Icon(Icons.message, size: 26, color: Colors.white),
+        ],
+        onTap: (index) {
+          setState(() {
+            //  _page = index;
+            // Update _page or navigate to a different screen based on index
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => _pages[index]),
+            );
+          });
+        },
       ),
     );
   }

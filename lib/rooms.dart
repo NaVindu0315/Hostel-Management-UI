@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:hostel/screens/Complains.dart';
+import 'package:hostel/screens/Directmsg.dart';
+import 'package:hostel/screens/Msg_Menu.dart';
+import 'package:hostel/screens/Notice.dart';
+
+import 'Dashboard.dart';
 
 class Rooms extends StatelessWidget {
   const Rooms({Key? key}) : super(key: key);
@@ -20,6 +26,15 @@ class sRoom extends StatefulWidget {
 }
 
 class _sRoomState extends State<sRoom> {
+  List<Widget> _pages = [
+    Dashboard(),
+    Rooms(),
+    Complains(),
+    Msg_Menu(),
+    Notice(),
+    Direct_Msg(),
+    // Add more pages here
+  ];
   String? selectedRoom;
   String? selectedBed;
   int _page = 0;
@@ -146,16 +161,19 @@ class _sRoomState extends State<sRoom> {
         animationDuration: const Duration(milliseconds: 300),
         items: const [
           Icon(Icons.home, size: 26, color: Colors.white),
-          Icon(Icons.back_hand, size: 26, color: Colors.white),
-          Icon(Icons.request_page, size: 26, color: Colors.white),
-          Icon(Icons.handyman_outlined, size: 26, color: Colors.white),
-          Icon(Icons.notifications, size: 26, color: Colors.white),
+          Icon(Icons.warning, size: 26, color: Colors.white),
+          Icon(Icons.menu, size: 26, color: Colors.white),
+          Icon(Icons.notification_add, size: 26, color: Colors.white),
           Icon(Icons.message, size: 26, color: Colors.white),
         ],
         onTap: (index) {
           setState(() {
-            _page = index;
+            //  _page = index;
             // Update _page or navigate to a different screen based on index
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => _pages[index]),
+            );
           });
         },
       ),
