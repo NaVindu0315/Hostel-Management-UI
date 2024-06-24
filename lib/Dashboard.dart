@@ -31,13 +31,151 @@ class _DashState extends State<Dash> {
         ),
         leading: null,
         actions: <Widget>[],
-        title: Text(
-          '                 AppBar',
-          style: TextStyle(
-              fontSize: 30.0, fontWeight: FontWeight.bold, color: Colors.white),
+        title: Center(
+          child: Text(
+            'AppBar',
+            style: TextStyle(
+                fontSize: 30.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.white),
+          ),
         ),
         backgroundColor: Color(0xff237ACC),
       ),
+      body: Column(children: [
+        Spacer(),
+        Row(
+          children: [
+            Spacer(),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.blue,
+                onPrimary: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10), // border radius
+                ),
+              ),
+              onPressed: () {
+                // button press action
+              },
+              child: Text(
+                'Room Availabilty',
+                style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
+              ),
+            ),
+            Spacer(),
+          ],
+        ),
+        SizedBox(
+          height: 20.0,
+        ),
+
+        ///complains
+        Row(
+          children: [
+            Spacer(),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.blue,
+                onPrimary: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10), // border radius
+                ),
+              ),
+              onPressed: () {
+                // button press action
+              },
+              child: Text(
+                'Complains',
+                style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
+              ),
+            ),
+            Spacer(),
+          ],
+        ),
+        SizedBox(
+          height: 20.0,
+        ),
+
+        ///msg menu
+        Row(
+          children: [
+            Spacer(),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.blue,
+                onPrimary: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10), // border radius
+                ),
+              ),
+              onPressed: () {
+                // button press action
+              },
+              child: Text(
+                'Msg Menu',
+                style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
+              ),
+            ),
+            Spacer(),
+          ],
+        ),
+        SizedBox(
+          height: 20.0,
+        ),
+
+        ///Notice
+        Row(
+          children: [
+            Spacer(),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.blue,
+                onPrimary: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10), // border radius
+                ),
+              ),
+              onPressed: () {
+                // button press action
+              },
+              child: Text(
+                'Notice',
+                style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
+              ),
+            ),
+            Spacer(),
+          ],
+        ),
+        SizedBox(
+          height: 20.0,
+        ),
+
+        ///direct msg
+        Row(
+          children: [
+            Spacer(),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.blue,
+                onPrimary: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10), // border radius
+                ),
+              ),
+              onPressed: () {
+                // button press action
+              },
+              child: Text(
+                'Direct Msg',
+                style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
+              ),
+            ),
+            Spacer(),
+          ],
+        ),
+        Spacer(),
+      ]),
     );
   }
 }
